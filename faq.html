@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Support</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: #0f172a;
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .faq-container {
+            width: 100%;
+            max-width: 700px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.2em;
+            background: linear-gradient(45deg, #00ffff, #ff00cc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .faq-intro { text-align: center; color: #ccc; margin-bottom: 30px; font-size: 0.9em; }
+
+        h2 { color: #00ffff; font-size: 1.2em; margin: 25px 0 15px; border-left: 4px solid #ff00cc; padding-left: 10px; }
+
+        /* Accordion Style */
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            margin-bottom: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .faq-question {
+            padding: 15px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .faq-question:hover { background: rgba(255, 255, 255, 0.08); }
+
+        .faq-answer {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: #aaa;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 10px 15px 20px;
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question { color: #00ffff; }
+
+        .faq-back { text-align: center; margin-top: 30px; }
+        .faq-back a { color: #ccc; text-decoration: none; font-size: 0.9em; border-bottom: 1px dashed #ccc; padding-bottom: 2px; }
+    </style>
+</head>
+
+<body>
+    <div class="faq-container">
+        <h1>Frequently Asked Questions</h1>
+        <p class="faq-intro">Quick answers to your common questions</p>
+
+        <h2>Account Questions</h2>
+        <div class="faq-item">
+            <div class="faq-question">How do I create an account? <span>+</span></div>
+            <div class="faq-answer">Click on the "Sign Up" button on the login page and fill in your details to create a new account instantly.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Forgot my password. What to do? <span>+</span></div>
+            <div class="faq-answer">Click on "Forgot Password" on the login page and follow the instructions to reset it via your registered email.</div>
+        </div>
+
+        <h2>Technical Questions</h2>
+        <div class="faq-item">
+            <div class="faq-question">Which browsers are supported? <span>+</span></div>
+            <div class="faq-answer">Our portal is optimized for all modern browsers including Chrome, Firefox, Safari, and Microsoft Edge.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Is my data secure? <span>+</span></div>
+            <div class="faq-answer">Absolutely. We use end-to-end encryption and advanced security protocols to keep your information safe.</div>
+        </div>
+
+        <h2>Features</h2>
+        <div class="faq-item">
+            <div class="faq-question">Can I customize my dashboard? <span>+</span></div>
+            <div class="faq-answer">Yes, you can change themes and manage your layout preferences directly from the Settings page.</div>
+        </div>
+
+        <div class="faq-back">
+            <a href="Dashboard.html">← Back to Dashboard</a>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for Accordion effect
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+                
+                // Toggle + and - sign
+                const span = question.querySelector('span');
+                span.textContent = item.classList.contains('active') ? '−' : '+';
+            });
+        });
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    </script>
+</body>
+</html>

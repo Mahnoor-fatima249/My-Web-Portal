@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #0f172a; /* Deep blue theme */
+            font-family: 'Segoe UI', sans-serif;
+            overflow: hidden;
+        }
+
+        .notification-container {
+            position: relative; /* relative taake flexbox body isay center rakh sakay */
+            width: 90%;
+            max-width: 600px;
+            height: 80vh;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            color: white;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        }
+
+        .notification-header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .notification-header h1 {
+            margin: 0;
+            background: linear-gradient(45deg, #00ffff, #ff00cc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .notification-header p {
+            color: #aaa;
+            font-size: 0.9em;
+        }
+
+        .notification-list {
+            flex: 1;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        /* Custom Scrollbar */
+        .notification-list::-webkit-scrollbar { width: 5px; }
+        .notification-list::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
+
+        .notification-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .notification-item.unread {
+            border-left: 4px solid #ff00cc;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .notification-item:hover {
+            transform: translateX(5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .notification-icon { font-size: 1.5em; margin-right: 15px; min-width: 40px; }
+        .notification-content { flex: 1; }
+        .notification-title { font-weight: bold; color: #00ffff; }
+        .notification-desc { color: #ccc; font-size: 0.85em; }
+        .notification-time { color: #888; font-size: 0.75em; margin-left: 10px; }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn {
+            padding: 10px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: white;
+            font-size: 0.9em;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .clear-btn { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255,255,255,0.2); }
+        .clear-btn:hover { background: #ff4444; }
+
+        .back-btn { background: linear-gradient(45deg, #00ffff, #3333ff); }
+        .back-btn:hover { box-shadow: 0 0 15px rgba(0,255,255,0.4); }
+    </style>
+</head>
+<body>
+
+    <div class="notification-container">
+        <div class="notification-header">
+            <h1>Notifications</h1>
+            <p>You have 3 unread alerts</p>
+        </div>
+
+        <div class="notification-list">
+            <div class="notification-item unread">
+                <div class="notification-icon">🎁</div>
+                <div class="notification-content">
+                    <div class="notification-title">Welcome Bonus</div>
+                    <div class="notification-desc">100 points added to your account!</div>
+                </div>
+                <div class="notification-time">2m</div>
+            </div>
+            </div>
+
+        <div class="action-buttons">
+            <a href="#" class="btn clear-btn">Clear All</a>
+            <a href="Dashboard.html" class="btn back-btn">Back to Dashboard</a>
+        </div>
+    </div>
+
+</body>
+</html>

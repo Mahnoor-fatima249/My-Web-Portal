@@ -1,0 +1,181 @@
+/* ==== GLOBAL RESET ==== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #111;
+    color: white;
+    min-height: 100vh;
+}
+
+/* ==== RING & AUTH PAGES (Login/Signup) ==== */
+.auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Taake rings bahar na niklein */
+}
+
+.ring {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ring i {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #fff;
+    border-radius: 50%; /* Simple circle for testing */
+    animation: animate 10s linear infinite;
+}
+
+@keyframes animate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+/* Login/Signup Box Fix */
+.login-box {
+    position: absolute;
+    width: 350px; /* Thora bara size */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    z-index: 10;
+}
+
+.inputbox input {
+    width: 100%;
+    padding: 10px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.submit-btn {
+    background: linear-gradient(45deg, #ff00cc, #00ffff);
+    padding: 12px;
+    border-radius: 25px;
+    color: white;
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+}
+
+/* ==== CONTENT PAGES (Dashboard/Help/FAQ) ==== */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+/* ==== GLOBAL RESET ==== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #111;
+    color: white;
+    min-height: 100vh;
+}
+
+/* ==== AUTH PAGES (Login/Signup) ==== */
+/* Ye class body par lagegi */
+.auth-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.ring {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ye rings banayenge */
+.ring i {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #fff;
+    transition: 0.5s;
+}
+
+.ring i:nth-child(1) { border-radius: 58% 62% 63% 37% / 41% 44% 56% 59%; animation: animate 10s linear infinite; border-color: #ff00cc; }
+.ring i:nth-child(2) { border-radius: 41% 42% 50% 52% / 38% 62% 63% 37%; animation: animate2 12s linear infinite; border-color: #00ffff; }
+.ring i:nth-child(3) { border-radius: 45% 55% 60% 40% / 40% 60% 65% 35%; animation: animate 14s linear infinite; border-color: #ffcc00; }
+
+@keyframes animate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes animate2 { 0% { transform: rotate(360deg); } 100% { transform: rotate(0deg); } }
+
+/* Login box animation ke andar center hoga */
+.login-box {
+    position: absolute;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login-box h2 {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.inputbox input {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    color: #fff;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: #fff;
+    color: #111;
+    border-radius: 40px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8em;
+}

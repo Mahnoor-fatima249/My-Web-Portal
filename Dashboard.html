@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .dashboard-container {
+            width: 90%;
+            max-width: 450px; /* smaller size */
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            text-align: center;
+            border-radius: 20px;
+            padding: 25px; /* smaller padding */
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+        }
+
+        .welcome-text {
+            font-size: 2.2em; /* slightly smaller */
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #ff00cc, #00ffff, #ffcc00);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .user-info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 15px;
+            margin: 15px 0;
+        }
+
+        .dashboard-cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px;
+            border-radius: 15px;
+            width: 140px;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .dashboard-actions {
+            margin-top: 10px;
+        }
+
+        .dashboard-actions a {
+            display: inline-block;
+            margin: 8px;
+            padding: 10px 22px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .setting-btn {
+            background: linear-gradient(45deg, #00ccff, #00ff99);
+        }
+
+        .logout-btn {
+            background: linear-gradient(45deg, #ff0066, #ffcc00);
+        }
+
+        .logout-btn:hover,
+        .setting-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            text-align: center;
+        }
+
+        footer a {
+            color: #00ffff;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 0.95em;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1 class="welcome-text">Welcome to Dashboard!</h1>
+
+        <div class="user-info">
+            <h3>Hello, User!</h3>
+            <p>You have successfully logged into your account.</p>
+        </div>
+
+        <div class="dashboard-cards">
+            <a href="profilepg.html" class="card">
+                <h3>Profile</h3>
+                <p>View & Edit</p>
+            </a>
+            <a href="setting.html" class="card">
+                <h3>Settings</h3>
+                <p>Preferences</p>
+            </a>
+            <a href="Message.html" class="card">
+                <h3>Messages</h3>
+                <p>Unread</p>
+            </a>
+            <a href="Notification.html" class="card">
+                <h3>Notifications</h3>
+                <p>New</p>
+            </a>
+        </div>
+
+        <div class="dashboard-actions">
+            <a href="profilepg.html" class="setting-btn">My Profile</a>
+            <a href="logout.html" class="logout-btn">Log Out</a>
+        </div>
+    </div>
+
+    <footer>
+        <a href="contact.html">Contact Us</a>
+        <a href="Aboutus.html">About Us</a>
+        <a href="helpsupport.html">Help & Support</a>
+        <a href="faq.html">FAQ</a>
+    </footer>
+</body>
+</html>

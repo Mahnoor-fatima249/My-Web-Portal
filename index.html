@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #111;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    .ring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .ring i {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border: 2px solid var(--clr);
+      border-radius: 50%;
+      animation: animate 20s linear infinite;
+    }
+
+    .ring i:nth-child(1) {
+      animation-delay: 0s;
+      --clr: #ff00cc;
+    }
+
+    .ring i:nth-child(2) {
+      animation-delay: -5s;
+      width: 150px;
+      height: 150px;
+      --clr: #00ffff;
+    }
+
+    .ring i:nth-child(3) {
+      animation-delay: -10s;
+      width: 200px;
+      height: 200px;
+      --clr: #ffcc00;
+    }
+
+    @keyframes animate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .home-container {
+      text-align: center;
+      color: white;
+      z-index: 10;
+      max-width: 400px;              /* ↓ smaller width */
+      padding: 25px;                 /* ↓ smaller padding */
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+
+    .home-container h1 {
+      font-size: 2em;                /* ↓ smaller font */
+      margin-bottom: 20px;           /* ↓ smaller spacing */
+      background: linear-gradient(45deg, #ff00cc, #00ffff);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;                     /* ↓ smaller gap */
+    }
+
+    .home-btn {
+      padding: 12px 25px;            /* ↓ smaller buttons */
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;           /* ↓ smaller radius */
+      color: white;
+      text-decoration: none;
+      font-size: 1em;                /* ↓ smaller font */
+      transition: all 0.3s ease;
+    }
+
+    .home-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.05);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .main-login {
+      background: linear-gradient(45deg, #ff00cc, #3333ff);
+      border: none;
+      margin-top: 5px;
+      box-shadow: 0 0 10px rgba(255, 0, 204, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="ring">
+    <i></i>
+    <i></i>
+    <i></i>
+
+    <div class="home-container">
+      <h1>Welcome to Our Platform 🚀</h1>
+      <div class="btn-group">
+        <a href="login.html" class="home-btn main-login">Login Page</a>
+        <a href="Dashboard.html" class="home-btn">Dashboard</a>
+        <a href="profilepg.html" class="home-btn">Profile</a>
+        <a href="Message.html" class="home-btn">Messages 💬</a>
+        <a href="Notification.html" class="home-btn">Notifications 🔔</a>
+        <a href="setting.html" class="home-btn">Settings ⚙️</a>
+        <a href="signup.html" class="home-btn">Sign Up ✨</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

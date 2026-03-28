@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Messages</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #0f172a;
+            font-family: 'Segoe UI', sans-serif;
+            overflow: hidden;
+        }
+
+        .message-container {
+            position: relative;
+            width: 90%;
+            max-width: 650px;
+            height: 85vh;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 25px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+        }
+
+        .message-header {
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 15px;
+        }
+
+        .message-header h1 {
+            margin: 0;
+            background: linear-gradient(45deg, #00ffff, #ff00cc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .message-header p {
+            font-size: 0.85em;
+            color: #aaa;
+        }
+
+        .search-box { margin: 20px 0; }
+        .search-box input {
+            width: 100%;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            color: white;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .search-box input:focus { border-color: #00ffff; background: rgba(255, 255, 255, 0.15); }
+
+        .message-list {
+            flex: 1;
+            overflow-y: auto;
+            padding-right: 8px;
+        }
+
+        /* Custom Scrollbar */
+        .message-list::-webkit-scrollbar { width: 5px; }
+        .message-list::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
+
+        .message-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 12px;
+            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .message-item:hover {
+            transform: scale(1.02);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .message-item.unread { border-left: 4px solid #00ffff; }
+
+        .message-sender { font-weight: bold; color: #00ffff; display: flex; justify-content: space-between; }
+        .message-time { color: #888; font-size: 0.75em; font-weight: normal; }
+        .message-preview { color: #ccc; font-size: 0.85em; margin-top: 5px; }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn {
+            padding: 10px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+            font-size: 0.9em;
+        }
+
+        .compose-btn { background: linear-gradient(45deg, #00ffcc, #3333ff); }
+        .back-btn { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); }
+        .back-btn:hover { background: white; color: black; }
+    </style>
+</head>
+<body>
+
+    <div class="message-container">
+        <div class="message-header">
+            <h1>My Messages</h1>
+            <p>You have 5 unread messages</p>
+        </div>
+
+        <div class="search-box">
+            <input type="text" id="messageSearch" placeholder="Search contacts or messages..." onkeyup="searchMessages()">
+        </div>
+
+        <div id="msgList" class="message-list">
+            <div class="message-item unread">
+                <div class="message-sender">Mike Smith <span class="message-time">10:30 PM</span></div>
+                <div class="message-preview">Hello! Are you available for the meeting tomorrow?</div>
+            </div>
+            <div class="message-item unread">
+                <div class="message-sender">Sara Khan <span class="message-time">Yesterday</span></div>
+                <div class="message-preview">I've sent you the documents you requested for the HEC training.</div>
+            </div>
+            <div class="message-item unread">
+                <div class="message-sender">Noor Fatima <span class="message-time">Dec 17</span></div>
+                <div class="message-preview">Your ticket has been resolved. Thank you for your patience!</div>
+            </div>
+            <div class="message-item unread">
+                <div class="message-sender">John Smith <span class="message-time">Today</span></div>
+                <div class="message-preview">Thanks for your help with the project! The client loved it.</div>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <a href="#" class="btn compose-btn" onclick="alert('Compose feature coming soon!')">Compose</a>
+            <a href="Dashboard.html" class="btn back-btn">Dashboard</a>
+        </div>
+    </div>
+
+    <script>
+        function searchMessages() {
+            let input = document.getElementById('messageSearch').value.toLowerCase();
+            let items = document.getElementsByClassName('message-item');
+            
+            for (let i = 0; i < items.length; i++) {
+                let text = items[i].innerText.toLowerCase();
+                if (text.includes(input)) {
+                    items[i].style.display = "";
+                } else {
+                    items[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
