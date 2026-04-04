@@ -2,7 +2,7 @@
 Welcome to my professional web portal project! This is a fully responsive, modern UI/UX inspired dashboard designed for students and developers.
 
 ## 👩‍💻 About Me
-I am **Mahnoor Fatima**, an 18-year-old IT student (Semester 5) at Virtual University of Pakistan and an aspiring Web Developer. 
+I am **Mahnoor Fatima**, an 24-year-old IT student (Semester 6) at Virtual University of Pakistan and an aspiring Web Developer. 
 
 ## ✨ Features
 - **Glassmorphism UI:** Modern translucent design with blurred backgrounds.
